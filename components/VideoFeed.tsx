@@ -1,9 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
-export function VideoFeed() {
+interface VideoFeedProps {
+  shouldPlay: boolean;
+}
+
+export function VideoFeed({ shouldPlay }: VideoFeedProps) {
   const [currentTime, setCurrentTime] = useState('');
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const updateTime = () => {
@@ -20,10 +25,29 @@ export function VideoFeed() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    if (shouldPlay && videoRef.current) {
+      videoRef.current.play().catch((error) => {
+        console.error('Error playing video:', error);
+      });
+    }
+  }, [shouldPlay]);
+
   return (
     <div className="h-full w-full relative bg-black overflow-hidden rounded-b-lg">
       {/* Video Display */}
       <div className="absolute inset-0 rounded-b-lg">
+        {/* Video Element */}
+        {shouldPlay && (
+          <video
+            ref={videoRef}
+            src="/drone-demo-final.mp4"
+            className="absolute inset-0 w-full h-full object-cover object-top"
+            loop
+            muted
+            playsInline
+          />
+        )}
         {/* Grid Pattern */}
         <div className="absolute inset-0 opacity-20" style={{
           backgroundImage: `
@@ -42,15 +66,8 @@ export function VideoFeed() {
           </div>
         </div>
         
-        {/* Overlaid Text - Top Left */}
-        <div className="absolute top-3 left-3 text-white">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-sm font-semibold">LIVE FEED</span>
-            <span className="flex items-center gap-1">
-              <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-              <span className="text-xs text-red-500 font-normal">REC</span>
-            </span>
-          </div>
+        {/* Overlaid Text - Top Right */}
+        <div className="absolute top-3 right-3 text-white">
           <div className="text-xs text-gray-300">
             <div>CAM-01</div>
             <div className="font-mono">{currentTime}</div>

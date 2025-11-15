@@ -11,6 +11,7 @@ import { ResizableWindow } from '@/components/ResizableWindow';
 
 export default function Home() {
   const [windowWidth, setWindowWidth] = useState(1920);
+  const [shouldPlayVideo, setShouldPlayVideo] = useState(false);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -21,10 +22,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#2a2d2e] text-gray-100 relative overflow-hidden">
-      <Navbar />
+      <Navbar onPlayDemo={() => setShouldPlayVideo(true)} />
       
       {/* Full screen map with border */}
-      <div className="absolute inset-0 top-16 border-4 border-[#3a3d3e]">
+      <div className="absolute inset-0 top-16 border-4 border-[#3a3d3e]" style={{ overflow: 'visible' }}>
         <BattlefieldMap />
       </div>
       
@@ -52,7 +53,7 @@ export default function Home() {
         maintainAspectRatio={true}
         aspectRatio={16 / 9}
       >
-        <VideoFeed />
+        <VideoFeed shouldPlay={shouldPlayVideo} />
       </ResizableWindow>
       
       {/* System Status - Fixed position, below Live Feed */}
