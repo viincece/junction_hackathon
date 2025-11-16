@@ -52,7 +52,8 @@
     "vaul": "^0.9.1",
     "cmdk": "^1.0.0",
     "input-otp": "^1.2.4",
-    "react-day-picker": "^8.10.1"
+    "react-day-picker": "^8.10.1",
+    "next-themes": "^0.3.0"
   },
   "devDependencies": {
     "typescript": "^5.5.4",
