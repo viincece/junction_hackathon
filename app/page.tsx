@@ -108,8 +108,8 @@ export default function Home() {
         title="LIVE FEED"
         defaultWidth={600}
         defaultHeight={338}
-        defaultX={Math.max(0, windowWidth - 620)}
-        defaultY={Math.min(80, windowHeight - 400)}
+        defaultX={Math.max(0, windowWidth - 600 - 270)}
+        defaultY={Math.max(80, windowHeight - 1200)}
         minWidth={300}
         minHeight={169}
         maintainAspectRatio={true}
@@ -119,7 +119,7 @@ export default function Home() {
       </ResizableWindow>
       
       {/* System Status - Fixed position, below Live Feed */}
-      <div className="absolute top-[600px] right-6 z-20 w-[400px]">
+      <div className="absolute bottom-6 right-6 z-20 w-[400px]">
         <StatsPanel isVideoShown={isVideoShown} />
       </div>
     </div>

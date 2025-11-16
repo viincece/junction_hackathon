@@ -27,7 +27,9 @@ export function Navbar({ onPlayDemo, isPressed = false }: NavbarProps) {
 
   return (
     <nav className="h-16 bg-[#1f2122] border-b border-[#3a3d3e] flex items-center justify-between px-6">
-      <h1 className="text-xl font-semibold text-white tracking-wide">TACTICAL SURVEILLANCE GRID</h1>
+      <div className="flex items-center gap-3">
+        <h1 className="text-xl font-semibold text-white tracking-wide font-alphaLyrae">DDD: Drone Detection & Destruction</h1>
+      </div>
       <div className="flex items-center gap-4">
         <button
           onClick={onPlayDemo}

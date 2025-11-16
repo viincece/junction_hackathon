@@ -117,7 +117,7 @@ export function ResizableWindow({
     return (
       <div
         ref={windowRef}
-        className="absolute bg-[#1f2122] border border-[#3a3d3e] rounded-t-lg shadow-lg z-30"
+        className="absolute bg-black/30 backdrop-blur-md border border-[#3a3d3e] rounded-t-lg shadow-lg z-30"
         style={{
           left: `${position.x}px`,
           top: `${position.y}px`,
@@ -127,7 +127,7 @@ export function ResizableWindow({
         <div
           ref={headerRef}
           onMouseDown={handleHeaderMouseDown}
-          className="flex items-center justify-between px-4 py-2 cursor-move bg-[#2a2d2e] border-b border-[#3a3d3e] rounded-t-lg select-none"
+          className="flex items-center justify-between px-4 py-2 cursor-move bg-black/30 backdrop-blur-md border-b border-[#3a3d3e] rounded-t-lg select-none"
         >
           <span className="text-sm font-semibold text-white">{title}</span>
           <button
@@ -144,7 +144,7 @@ export function ResizableWindow({
   return (
     <div
       ref={windowRef}
-      className="absolute bg-[#1f2122] border border-[#3a3d3e] rounded-lg shadow-lg z-30 flex flex-col"
+      className="absolute bg-black/30 backdrop-blur-md border border-[#3a3d3e] rounded-lg shadow-lg z-30 flex flex-col"
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
@@ -156,7 +156,7 @@ export function ResizableWindow({
       <div
         ref={headerRef}
         onMouseDown={handleHeaderMouseDown}
-        className="flex items-center justify-between px-4 py-2 cursor-move bg-[#2a2d2e] border-b border-[#3a3d3e] rounded-t-lg select-none"
+        className="flex items-center justify-between px-4 py-2 cursor-move bg-black/30 backdrop-blur-md border-b border-[#3a3d3e] rounded-t-lg select-none"
       >
         <span className="text-sm font-semibold text-white">{title}</span>
         <div className="flex items-center gap-2">

@@ -230,6 +230,20 @@ html {
   font-size: var(--font-size);
 }
 
+/* Custom Navbar Title Font */
+@font-face {
+  font-family: 'AlphaLyrae';
+  src: url('/fonts/AlphaLyrae-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-alphaLyrae {
+  font-family: 'AlphaLyrae', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  /* Only enable stylistic set 1 as requested */
+  font-feature-settings: "ss01" 1;
+}
 @keyframes flash-alert {
   0%, 100% {
     opacity: 1;

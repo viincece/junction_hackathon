@@ -17,7 +17,7 @@ interface ActiveCameraProps {
 
 export function ActiveCamera({ isVideoShown = false }: ActiveCameraProps) {
   return (
-    <Card className="bg-[#1f2122] border-[#3a3d3e] text-white">
+    <Card className="bg-black/30 backdrop-blur-md border-[#3a3d3e] text-white">
       <CardHeader className="pb-3">
         <CardTitle className="text-sm text-gray-400">Active Cameras</CardTitle>
       </CardHeader>
