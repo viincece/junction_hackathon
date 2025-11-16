@@ -100,7 +100,7 @@ export function VideoFeed({ shouldPlay, onVideoPlaying, onVideoShown }: VideoFee
         {showVideo && (
           <video
             ref={videoRef}
-            src="/drone-demo-final.mp4"
+            src="/drone-demo-final-final.mp4"
             className="absolute inset-0 w-full h-full object-cover object-top"
             loop
             muted
